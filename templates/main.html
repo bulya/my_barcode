@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load pagination_tags %}
+
+{% block left %}
+    {% include 'left-col.html' %}
+{% endblock %}
+
+{% block center %}
+    <div class="center">
+        <table class="products">
+            <thead>
+                <tr>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Price</th>
+                    <th>Created</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% autopaginate products 5 %}
+                {% for p in products %}
+                <tr>
+                    <th><img src="{{ p.image.path }}" alt="" width="50" height="50" /></th>
+                    <th><a href="/product/{{ p.id }}">{{ p.name }}</a></th>
+                    <th>{{ p.company }}</th>
+                    <th>{{ p.price }}</th>
+                    <th>{{ p.created }}</th>
+                </tr>
+                {% endfor %}
+
+            </tbody>
+        </table>
+        <div id=pagination>{% paginate %}</div>
+    </div>
+{% endblock %}

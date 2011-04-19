@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block left %}
+    {% include 'left-col.html' %}
+{% endblock %}
+
+{% block center %}
+
+    <div class="picture">
+        <img src="{{ product.image.path }}" width="150" height="150"/>
+    </div>
+
+    <div id='product-detail'>
+    <table>
+        <tbody>
+            <tr>
+                <th>Product Name:</th>
+                <td>{{ product.name }}</td>
+            </tr>
+            <tr>
+                <th>Company:</th>
+                <td>{{ product.company }}</td>
+            </tr>
+            <tr>
+                <th>Description:</th>
+                <td>{{ product.description }}</td>
+            </tr>
+            <tr>
+                <th>Price:</th>
+                <td>{{ product.price }}</td>
+            </tr>
+            <tr>
+                <th>Quantity:</th>
+                <td>{{ product.quantity }}</td>
+            </tr>
+            <tr>
+                <th>Created:</th>
+                <td>{{ product.created }}</td>
+            </tr>
+            <tr>
+                <th>Expires on:</th>
+                <td>{{ product.expire_date }}</td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+    <div class="barcodes"></div>
+{% endblock %}

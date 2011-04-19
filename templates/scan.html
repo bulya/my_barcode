@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block left %}
+    {% include 'left-col.html' %}
+{% endblock %}
+
+{% block center %}
+    <div class="scan-center">
+        <span>Load Picture of bar-code for scanning it!</span>
+        <br />
+        <br />
+        <br />
+        <form enctype="multipart/form-data" action="" method="post">{% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+        </form>
+        {% if error_message %}
+            <span>Nothing found:( Or something wrong!</span>
+        {% endif %}
+    </div>
+{% endblock %}
