@@ -1,0 +1,4 @@
+My_barcode
+
+    Simple Project for automatic crating barcode images after saving some entity,
+ and barcode scanner that helps to find entity using barcode-image file.

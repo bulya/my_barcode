@@ -1,7 +1,7 @@
 # Create your views here.
 import os
 import zbar
-import barcode
+
 from django.core.files.base import ContentFile
 
 from django.shortcuts import render_to_response, HttpResponseRedirect
